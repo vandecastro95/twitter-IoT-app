@@ -8,7 +8,9 @@
   ## Data Visualization used
    [https://semiotic.nteract.io/guides/scatterplot](Scatter Plot)
       User can hover over plot points to display the word represented and its occurences on a Tooltip. Initial versions had the word 
-      displaying on the center of the circle but there was issues with responsiveness. This visualization is partly for aesthetics             and a second visualization is used to display data more evidently
+      displaying on the center of the circle but there was issues with responsiveness. This visualization is partly for aesthetics             and a second visualization is used to display data more evidently.
+      This chart is generated dynamically. Bubble positions are different everytime the application is ran/refreshed. Future versions
+      could have collision detection to prevent bubbles occupying the same area.
    [https://semiotic.nteract.io/guides/pie-chart](Nightingale Pie Chart)
       Chart displays Buzzwords and number of occurences. The top 20 buzzwords from the data set is sorted in order of most 
       occurences to least. Hovering over the bar displays a tooltip that displays both the Buzzword and the number of occurences
