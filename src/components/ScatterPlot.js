@@ -1,6 +1,5 @@
 import ResponsiveXYFrame from "semiotic/lib/ResponsiveXYFrame"
 import React, {useContext} from 'react';
-import {Typography } from '@material-ui/core'
 import { TwitterContext } from '../contexts/TwitterContext';
 
 export default () => {
