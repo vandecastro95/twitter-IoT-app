@@ -33,7 +33,7 @@ const TwitterContextProvider = ({ children }) => {
 
             //array is sorted and then stored in state
             buzzWordsArr.sort((a,b) => b.count - a.count)
-            setBuzzWords(buzzWordsArr.slice(0, 70))
+            setBuzzWords(buzzWordsArr)
         }
     }, [loading])
 

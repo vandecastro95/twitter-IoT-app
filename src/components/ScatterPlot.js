@@ -1,5 +1,6 @@
 import ResponsiveXYFrame from "semiotic/lib/ResponsiveXYFrame"
 import React, {useContext} from 'react';
+import {Typography } from '@material-ui/core'
 import { TwitterContext } from '../contexts/TwitterContext';
 
 export default () => {
@@ -8,7 +9,7 @@ const { buzzWords } = useContext(TwitterContext);
 
 const frameProps = { 
     /* --- Data --- */
-      points: buzzWords,
+      points: buzzWords.slice(0, 70),
     
     /* --- Size --- */
       size: [700,400],
@@ -36,15 +37,16 @@ const frameProps = {
       }
     }
   return <ResponsiveXYFrame
+            style={{ zIndex: -1}}
 
             //tooltip
             hoverAnnotation={true}
             tooltipContent={d => (
                 <div style={{background: 'white', border: '1px solid gray', padding: '10px', minWidth: '45px'}}>
-                    <h5 style={{fontSize: '12px'}}>{d.word}</h5>
-                    <p>Occurences: {d.count}</p>
+                    <h5 style={{fontSize: '12px', fontWeight: '500', marginBottom: '-3px'}}>{d.word}</h5>
+                    <p>{d.count} mentions</p>
+                   
                 </div>
             )}
-            matte={true}
             {...frameProps} />
 } 

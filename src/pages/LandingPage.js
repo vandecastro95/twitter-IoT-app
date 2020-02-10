@@ -1,11 +1,10 @@
 import React from 'react';
-import Semiotic from '../components/Semiotic'
-import XYFrame from '../components/XYFrame.js'
-import Info from '../components/Info'
+import ScatterPlot from '../components/ScatterPlot.js'
+import Info from '../components/Info.js'
 
 export default () => (
     <div style={{ minHeight: '100vh'}}>
-        { <XYFrame />}
+        { <ScatterPlot />}
          <Info/> 
     </div>
 )
