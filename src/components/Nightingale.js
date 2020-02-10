@@ -5,9 +5,9 @@ import { TwitterContext } from '../contexts/TwitterContext'
 
 const Nightingale = () => {
 
-  const {buzzWords} = useContext(TwitterContext)
+  //Component displays the top 20 buzzwords in a Nightingale chart
 
-    console.log(buzzWords)
+  const {buzzWords} = useContext(TwitterContext)
 
   const frameProps = { 
     // /* --- Data --- */
@@ -39,21 +39,27 @@ const Nightingale = () => {
   
   return(
     <div>
-        {buzzWords.length > 0 && 
-          <OrdinalFrame
-            baseMarkProps={{ transitionDuration: { default: 500, fill: 2500 } }}
-            oLabel={d => <text 
+        {
+          buzzWords.length > 0 && 
+            <OrdinalFrame
+              baseMarkProps={{ transitionDuration: { default: 500, fill: 2500 } }}
+              oLabel={d => <text 
               fontSize={10}
               style={{ fontWeight: 700}}>{d}</text> }
               hoverAnnotation={true}
               tooltipContent={d => (
                   <div style={{background: 'white', border: '1px solid gray', padding: '10px', minWidth: '45px'}}>
-                      <h5 style={{fontSize: '13px', fontWeight: '500', marginBottom: '-3px', wordBreak: 'keep-all'}}> {d.pieces[0].word}</h5>
-                      <p style={{fontSize: '11px'}}>{d.pieces[0].count}  mentions</p>
+                      <h5 style={{fontSize: '13px', fontWeight: '500', marginBottom: '-3px', wordBreak: 'keep-all'}}>
+                       {d.pieces[0].word}
+                      </h5>
+                      <p style={{fontSize: '11px'}}>
+                        {d.pieces[0].count}  mentions
+                      </p>
                   </div>
               )}
-            {...frameProps}
-        />}
+              {...frameProps}
+            />
+          }
     </div>
 )}
 

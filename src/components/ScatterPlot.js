@@ -9,7 +9,7 @@ const { buzzWords } = useContext(TwitterContext);
 
 const frameProps = { 
     /* --- Data --- */
-      points: buzzWords.slice(0, 70),
+      points: buzzWords,
     
     /* --- Size --- */
       size: [700,400],
@@ -26,7 +26,7 @@ const frameProps = {
       pointStyle: d => {
         return {
           r: Math.pow(d.count, 1.4),
-          fill: d.count >= 18 ? "rgb(40,142,157, .2)" : d.count >= 10 ? "rgb(55,63,80, .4)" : d.count >= 2 ? "rgb(40,142,157, .6)" : "rgb(55,63,80, .8)",
+          fill: d.count >= 18 ? "rgb(40,142,157, .2)" : d.count >= 10 ? "rgb(137,194,224, .4)" : d.count >= 2 ? "rgb(40,142,157, .6)" : "rgb(55,63,80, .8)",
           stroke: d.count >= 13 && "rgb(55,63,80)"
         }
       },
@@ -44,7 +44,7 @@ const frameProps = {
             tooltipContent={d => (
                 <div style={{background: 'white', border: '1px solid gray', padding: '10px', minWidth: '45px'}}>
                     <h5 style={{fontSize: '12px', fontWeight: '500', marginBottom: '-3px'}}>{d.word}</h5>
-                    <p>{d.count} mentions</p>
+                    <p style={{fontSize: '11px'}}>{d.count} mentions</p>
                    
                 </div>
             )}

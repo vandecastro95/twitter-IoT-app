@@ -4,17 +4,16 @@ import { Paper, Grid, Box, makeStyles, Typography  } from '@material-ui/core'
 
 const useStyles = makeStyles({
     container: {
-      background: '#F7F6F3',
+    //   background: '#F7F6F3',
       border: 0,
       borderRadius: 3,
-      boxShadow: '0 3px 5px 2px rgb(55,63,80, .3)',
+    //   boxShadow: '0 3px 5px 2px rgb(55,63,80, .3)',
       color: 'black',
-      padding: '30px',
+      padding: '28px',
       maxWidth: '1200px',
       margin: '40px auto'
     },
     header: {
-        fontWeight: 700
     },
     nightingaleHeader: {
         fontWeight: 700, 
@@ -24,7 +23,8 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        fontWeight: 700
     },
     infoBox: {
         margin: 'auto'
@@ -34,6 +34,19 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    infoBuzzword: {
+        fontWeight: '700', 
+        marginBottom: '-5px',
+        fontSize: '14px'
+    },
+    infoIot: {
+        fontWeight: '900'
+    },
+    infoText: {
+        fontWeight: '500', 
+        marginTop: '-12px',
+        fontSize: '14px'
     }
   });
 
@@ -41,22 +54,26 @@ const Info = () => {
 
     const classes = useStyles();
     return ( 
-        <Box style={{ marginTop: '-130px', zIndex: 9999}}>
-            <Paper className={classes.container}>
+        <Box style={{ marginTop: '-160px', zIndex: 9999}}>
+            <Paper square elevation={21} className={classes.container}>
                 <Grid container spacing={2}>
                     <Grid item md={6} sm={12} className={classes.info}>
                         <Box className={classes.infoBox}>
-                            <Typography variant="subtitle2" gutterBottom>
+                            <Typography variant="subtitle2" className={classes.infoBuzzword} gutterBottom>
                             Buzzwords on the
                             </Typography>
-                            <Typography variant="h3" className={classes.header} gutterBottom>
+                            <Typography variant="h3" className={classes.infoIot} gutterBottom>
                             Internet of Things
                             </Typography>
-                            <Typography variant="body2" gutterBottom>
-                            Buzzwords gathered from 100 tweets #hashtag IoT were gathered and, after filtering
-                            for Stopwords, were visualized with Semiotic.js. The application is build
-                            with React.js, on an Express.js backend and designed with Material UI.
-                            All data were pulled using the Twitter API.
+                            <Typography variant="body2" className={classes.infoText} gutterBottom><br></br>
+                            {'\u00A0'}{'\u00A0'}{'\u00A0'}The Internet of Things is the process of putting a computer
+                            processor and a wi-fi connection into everyday items so that we can
+                            use computer programing to control those devices. This allows us to create solutions
+                            where the devices communicate and work together. Buzzwords were gathered from 100 tweets with #IoT and filtered for stop words. These
+                            buzzwords were then visualized using Semiotic.js, which is a data visualization 
+                            framework for React.js. The App is built with Node.js, a Express.js server and a 
+                            React.js frontend designed with Material UI. All data were pulled from the 
+                            Twitter API.
                             </Typography>
                         </Box>
                     </Grid>
