@@ -65,8 +65,7 @@ const Tweets = (props) => {
     
     return (
         <Paper 
-            className={classes.root} 
-            onClick={() => source}
+            className={classes.root}
             square
             >
             <Grid container className={classes.container} spacing={1} >
@@ -87,8 +86,7 @@ const Tweets = (props) => {
                                 <span className={classes.heroName} onClick={() => handleOnClick(screen_name)}>
                                     {name}
                                 </span>
-                            {' @' + screen_name + ' · '} 
-                            {created_at.split(' ')[1] + ' ' + created_at.split(' ')[2]}
+                            {` @${screen_name} · ${created_at.split(' ')[1]} ${created_at.split(' ')[1]}`}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
