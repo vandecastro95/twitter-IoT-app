@@ -28,7 +28,10 @@ export default () => {
           return {
             //radius shouldn't be greater than 55
             r: Math.pow(d.count + 2, 1.5) >= 55 ? 55 : Math.pow(d.count + 1, 1.5),
-            fill: d.count >= 18 ? "rgb(40,142,157, .2)" : d.count >= 10 ? "rgb(137,194,224, .4)" : d.count >= 2 ? "rgb(40,142,157, .6)" : "rgba(0, 86, 98, .6)",
+            fill: d.count >= 18 ? "rgb(40,142,157, .2)" : 
+                  d.count >= 10 ? "rgb(137,194,224, .4)" :
+                  d.count >= 2 ? "rgb(40,142,157, .6)" : 
+                  "rgba(0, 86, 98, .6)",
             stroke: d.count >= 13 && "rgb(55,63,80)"
           }
         },

@@ -4,7 +4,7 @@ import {
     Typography, 
     ExpansionPanel, 
     ExpansionPanelSummary, 
-    ExpansionPanelDetails
+    ExpansionPanelDetails,
 } from '@material-ui/core';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 import { TwitterContext } from '../contexts/TwitterContext';
@@ -23,7 +23,8 @@ const TweetList = () => {
                 boxShadow: 'none', 
                 fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
                 marginTop: '-5px',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                borderTop: '1px solid rgba(0, 0, 0, 0.12)'
             }}
         >
                 <ExpansionPanelSummary 

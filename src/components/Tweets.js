@@ -26,7 +26,6 @@ const useStyles = makeStyles({
        alignItems: 'center',
    },
    avatar: {
-    //    padding: '5px'
     '&:hover' : {
         cursor: 'pointer'
       }
@@ -37,6 +36,11 @@ const useStyles = makeStyles({
         textDecoration: 'underline',
         cursor: 'pointer'
       }
+   },
+   avatarContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
    }
   });
 
@@ -66,7 +70,7 @@ const Tweets = (props) => {
             square
             >
             <Grid container className={classes.container} spacing={1} >
-                <Grid item xs={2}>
+                <Grid item xs={2} className={classes.avatarContainer}>
                     <Avatar 
                         alt={name} 
                         src={profile_image_url} 
