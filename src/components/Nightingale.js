@@ -34,7 +34,11 @@ const Nightingale = () => {
           stroke: "white",
         }
       },
-      axes: true
+      // axes: true  
+      labelSettings: {
+        label: true,
+        orient: 'stem'
+      }
     }
   
   return(
@@ -44,8 +48,12 @@ const Nightingale = () => {
             <OrdinalFrame
               baseMarkProps={{ transitionDuration: { default: 500, fill: 2500 } }}
               oLabel={d => <text 
-              fontSize={10}
-              style={{ fontWeight: 700}}>{d}</text> }
+                fontSize={12}
+                textAnchor = "start"
+                style={{ maxWidth: '20px'}}
+                >
+                {d}
+              </text> }
               hoverAnnotation={true}
               tooltipContent={d => (
                   <div style={{background: 'white', border: '1px solid gray', padding: '10px', minWidth: '45px'}}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Nightingale from './Nightingale';
+import TweetList from './TweetsList'
 import { Paper, Grid, Box, makeStyles, Typography  } from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -8,10 +9,14 @@ const useStyles = makeStyles({
       border: 0,
       borderRadius: 3,
     //   boxShadow: '0 3px 5px 2px rgb(55,63,80, .3)',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       color: 'black',
-      padding: '28px',
       maxWidth: '1200px',
-      margin: '40px auto'
+      margin: '40px auto',
+      height: 'fit-content'
+    },
+    infoContainer: {
+      padding: '28px',
     },
     header: {
     },
@@ -33,15 +38,17 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        overflow: 'hidden'
     },
     infoBuzzword: {
         fontWeight: '700', 
-        marginBottom: '-5px',
+        marginBottom: '-2px',
         fontSize: '14px'
     },
     infoIot: {
-        fontWeight: '900'
+        fontWeight: '900',
+        textShadow: '.5px 0px 1px gray'
     },
     infoText: {
         fontWeight: '500', 
@@ -55,8 +62,8 @@ const Info = () => {
     const classes = useStyles();
     return ( 
         <Box style={{ marginTop: '-160px', zIndex: 9999}}>
-            <Paper square elevation={21} className={classes.container}>
-                <Grid container spacing={2}>
+            <Paper square elevation={10} className={classes.container}>
+                <Grid container spacing={2} className={classes.infoContainer}>
                     <Grid item md={6} sm={12} className={classes.info}>
                         <Box className={classes.infoBox}>
                             <Typography variant="subtitle2" className={classes.infoBuzzword} gutterBottom>
@@ -83,7 +90,11 @@ const Info = () => {
                         </Typography> */}
                         <Nightingale />
                     </Grid>
+                    {/*<Grid item xs={12} style={{ margin: '0 auto' }}>
+                        
+                    </Grid>*/}
                 </Grid>
+                <TweetList/> 
             </Paper>
         </Box>
      );

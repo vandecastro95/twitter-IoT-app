@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 function useFetch(url) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [errorMessage, setError] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
         async function fetchUrl() {
 
@@ -18,7 +18,7 @@ function useFetch(url) {
             }
 
             catch(error) {
-                setError(errorMessage)
+                setErrorMessage(error)
             }
             
         }

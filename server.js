@@ -16,7 +16,7 @@ app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/tweets', function (req, res) {
-    var params = {q: 'q=%23IoT', count: 100};
+    var params = {q: 'q=%23IoT', count: 100, exclude: 'retweets'};
     client.get('search/tweets', params, function(error, tweets, response) {
         if (!error) {
           return res.send(tweets.statuses);
