@@ -66,6 +66,7 @@ const Tweets = (props) => {
     return (
         <Paper 
             className={classes.root}
+            elevation={1}
             square
             >
             <Grid container className={classes.container} spacing={1} >
